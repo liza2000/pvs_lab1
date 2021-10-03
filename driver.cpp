@@ -46,10 +46,10 @@ void waitForPressBtn(int time) {
 }
 //    int umain() {
 //        while (true) {
-//            switchGreen(true, 5000);
-//            blink(GREEN, 5000, 500);
+//            switchGreen(true, 2500);
+//            blink(GREEN, 2500, 250);
 //            switchGreen(false);
-//            switchRedYellow(YELLOW, 5000);
+//            switchRedYellow(YELLOW, 2500);
 //            switchRedYellow(RED);
 //            waitForPressBtn(10000);
 //            switchRedYellow(CLEAN);
