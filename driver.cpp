@@ -20,7 +20,7 @@ void switchRedYellow(int pin, int time = 0) {
 }
 
 
-void switchGreen(bool set, int time = 0){
+void switchGreen(int set, int time = 0){
     HAL_GPIO_WritePin(GPIOD,GREEN, set ? SET : RESET);
     HAL_Delay(time);
 }
@@ -28,7 +28,8 @@ void switchGreen(bool set, int time = 0){
 
 
 void blink(int pin, int time, int period){
-    if (pin==0) return;
+    if (pin!= RED && pin!=YELLOW && pin!= CLEAN)
+        return;
     for (int i = period; i <= time; i+=period) {
         HAL_GPIO_TogglePin(GPIOD, pin);
         HAL_Delay(period);
@@ -45,10 +46,10 @@ void waitForPressBtn(int time) {
     }
 }
 //    int umain() {
-//        while (true) {
-//            switchGreen(true, 2500);
+//        while (1) {
+//            switchGreen(1, 2500);
 //            blink(GREEN, 2500, 250);
-//            switchGreen(false);
+//            switchGreen(0);
 //            switchRedYellow(YELLOW, 2500);
 //            switchRedYellow(RED);
 //            waitForPressBtn(10000);
